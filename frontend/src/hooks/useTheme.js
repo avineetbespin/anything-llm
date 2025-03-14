@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 const availableThemes = {
   default: "Default",
   light: "Light",
+  blueGradient: "Blue Gradient",
 };
 
 /**
