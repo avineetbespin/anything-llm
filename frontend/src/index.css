@@ -105,38 +105,31 @@
 
 [data-theme="blueGradient"] {
   --theme-loader: #ffffff;
-  --theme-bg-primary: linear-gradient(135deg, #1e3c72, #2a5298);
-  --theme-bg-secondary: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-  --theme-bg-sidebar: linear-gradient(135deg, #1e3c72, #2a5298);
-  --theme-bg-container: linear-gradient(135deg, #1e3c72, #2a5298);
-  --theme-bg-chat: linear-gradient(135deg, #1e3c72, #2a5298);
+  --theme-bg-primary: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+  --theme-bg-secondary: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d) !important;
+  --theme-bg-sidebar: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+  --theme-bg-container: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+  --theme-bg-chat: linear-gradient(135deg, #1e3c72, #2a5298) !important;
   --theme-bg-chat-input: #27282a;
   --theme-text-primary: #ffffff;
   --theme-text-secondary: rgba(255, 255, 255, 0.8);
-
   --theme-sidebar-item-default: rgba(255, 255, 255, 0.1);
   --theme-sidebar-item-selected: rgba(255, 255, 255, 0.3);
   --theme-sidebar-item-hover: #3f3f42;
   --theme-sidebar-border: rgba(255, 255, 255, 0.1);
   --theme-sidebar-item-workspace-active: #ffffff;
   --theme-sidebar-item-workspace-inactive: #ffffff;
-
   --theme-chat-input-border: #525355;
-
   --theme-action-menu-bg: #27282a;
   --theme-action-menu-item-hover: rgba(255, 255, 255, 0.1);
-
   --theme-settings-input-bg: #0e0f0f;
   --theme-settings-input-placeholder: rgba(255, 255, 255, 0.5);
   --theme-settings-input-active: rgb(255 255 255 / 0.2);
-
   --theme-modal-border: #3f6cb2;
   --theme-settings-input-text: #ffffff;
-
   --theme-button-primary: #46c8ff;
   --theme-button-primary-hover: #434343;
   --theme-button-cta: #7cd4fd;
-
   --theme-file-row-even: #1e3c72;
   --theme-file-row-odd: #2a5298;
   --theme-file-row-selected-even: rgba(14, 165, 233, 0.2);
