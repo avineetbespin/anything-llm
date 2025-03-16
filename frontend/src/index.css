@@ -137,6 +137,27 @@
   --theme-file-picker-hover: rgb(14 165 233 / 0.2);
 }
 
+/* ✅ Force Background Update */
+[data-theme="blueGradient"] {
+  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+}
+
+/* ✅ Ensure BODY uses blue gradient */
+body[data-theme="blueGradient"] {
+  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+}
+
+/* ✅ Override any other background styles */
+html[data-theme="blueGradient"],
+#root[data-theme="blueGradient"] {
+  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+}
+
+/* ✅ Debug if text is invisible */
+[data-theme="blueGradient"] * {
+  color: white !important;
+}
+
 [data-theme="light"] .text-white {
   color: var(--theme-text-primary);
 }
