@@ -177,50 +177,50 @@ html[data-theme="blueGradient"],
 
 
 /* Modify Text Classes for Blue Gradient */
-[data-theme="bluegradient"] .text-white {
+[data-theme="blueGradient"] .text-white {
   color: var(--theme-text-primary);
 }
 
-[data-theme="bluegradient"] .text-description,
-[data-theme="bluegradient"] .text-white\/60 {
+[data-theme="blueGradient"] .text-description,
+[data-theme="blueGradient"] .text-white\/60 {
   color: var(--theme-text-secondary);
 }
 
 /* Background for Secondary UI Elements */
-[data-theme="bluegradient"] .bg-theme-bg-secondary {
+[data-theme="blueGradient"] .bg-theme-bg-secondary {
   border: 1px solid var(--theme-sidebar-border);
 }
 
 /* Borders */
-[data-theme="bluegradient"] .border-white\/10 {
+[data-theme="blueGradient"] .border-white\/10 {
   border-color: var(--theme-sidebar-border);
 }
 
 /* Chat Container Styling */
-[data-theme="bluegradient"] #chat-container {
+[data-theme="blueGradient"] #chat-container {
   background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
 /* Buttons */
-[data-theme="bluegradient"] .btn-primary {
+[data-theme="blueGradient"] .btn-primary {
   background-color: var(--theme-button-primary);
   color: white;
 }
 
-[data-theme="bluegradient"] .btn-primary:hover {
+[data-theme="blueGradient"] .btn-primary:hover {
   background-color: var(--theme-button-primary-hover);
 }
 
 /* Scrollbars */
-[data-theme="bluegradient"] .show-scrollbar {
+[data-theme="blueGradient"] .show-scrollbar {
   scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.1);
 }
 
-[data-theme="bluegradient"] .show-scrollbar::-webkit-scrollbar-thumb {
+[data-theme="blueGradient"] .show-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-[data-theme="bluegradient"] .show-scrollbar::-webkit-scrollbar-thumb:hover {
+[data-theme="blueGradient"] .show-scrollbar::-webkit-scrollbar-thumb:hover {
   background-color: #cccccc;
 }
 /*
