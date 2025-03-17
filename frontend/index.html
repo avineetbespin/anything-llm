@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,32 +8,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AnythingLLM | Your personal LLM trained on anything</title>
 
-    <meta name="title" content="AnythingLLM | Your personal LLM trained on anything">
-    <meta name="description" content="AnythingLLM | Your personal LLM trained on anything">
+<style>
+  :root {
+    --theme-bg-primary: linear-gradient(to right, #001f3f, #0074D9) !important;
+    --theme-bg-secondary: #004080 !important;
+    --theme-text-primary: #ffffff !important;
+    --theme-text-secondary: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  /* Apply the gradient to both content & sidebar */
+  body {
+    background: var(--theme-bg-primary) !important;
+  }
+
+  /* Target the left sidebar */
+  .bg-theme-bg-sidebar {
+    background: var(--theme-bg-sidebar) !important;
+  }
+
+  /* Ensure the workspace items also match */
+  .sidebar-item,
+  .sidebar-footer {
+    background: transparent !important;
+  }
+</style>
+
+
+
+    <meta name="title" content="BespinLLM | Your HRNow LLM">
+    <meta name="description" content="BespinLLM | Your HRNow LLM">
 
     <!-- Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://anythingllm.com">
-    <meta property="og:title" content="AnythingLLM | Your personal LLM trained on anything">
-    <meta property="og:description" content="AnythingLLM | Your personal LLM trained on anything">
+    <meta property="og:url" content="https://bespinglobal.us">
+    <meta property="og:title" content="BespinLLM | Your HRNow LLM">
+    <meta property="og:description" content="BespinLLM | Your HRNow LLM">
     <meta property="og:image"
       content="https://raw.githubusercontent.com/Mintplex-Labs/anything-llm/master/images/promo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://anythingllm.com">
-    <meta property="twitter:title" content="AnythingLLM | Your personal LLM trained on anything">
-    <meta property="twitter:description" content="AnythingLLM | Your personal LLM trained on anything">
+    <meta property="twitter:url" content="https://bespinglobal.us">
+    <meta property="twitter:title" content="BespinLLM | Your personal LLM trained on anything">
+    <meta property="twitter:description" content="BespinLLM | Your personal LLM trained on anything">
     <meta property="twitter:image"
       content="https://raw.githubusercontent.com/Mintplex-Labs/anything-llm/master/images/promo.png">
 
     <link rel="icon" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
+    <script type="module" crossorigin src="/index.js"></script>
+    <link rel="stylesheet" href="/index.css">
   </head>
 
   <body>
     <div id="root" class="h-screen"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-
+<script>
+//Heygen script
+    !function(window){
+        const host = "https://labs.heygen.com",
+        url = host + "/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJKdW5lX0hSX3B1YmxpYyIsInByZXZpZXdJ%0D%0AbWciOiJodHRwczovL2ZpbGVzMi5o                                                                            ZXlnZW4uYWkvYXZhdGFyL3YzLzc0NDQ3YTI3ODU5YTQ1NmM5%0D%0ANTVlMDFmMjFlZjE4MjE2XzQ1NjIwL3ByZXZpZXdfdGFsa18xLndlYnAiLCJuZWVkUmVtb3ZlQmFj%0D%0Aa2dyb3VuZCI6ZmFsc2UsImtub                                                                            3dsZWRnZUJhc2VJZCI6ImQwOGY0NmVhY2UyZjRmZGJhM2NkNWJm%0D%0ANTk2NGMzYTg0IiwidXNlcm5hbWUiOiI0ZjdjMmM0ODk3MjE0MGZkOWFjMTNmM2Q4Nzc2Y2Y4YSJ9&inIFrame=1",
+        clientWidth = document.body.clientWidth,
+        wrapDiv = document.createElement("div");
+        wrapDiv.id = "heygen-streaming-embed";
+        const container = document.createElement("div");
+        container.id = "heygen-streaming-container";
+        const stylesheet = document.createElement("style");
+        stylesheet.innerHTML = `
+            #heygen-streaming-embed {
+                z-index: 9999;
+                position: fixed;
+                left: 40px;
+                bottom: 100px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+                box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);
+                transition: all linear 0.1s;
+                overflow: hidden;
+                opacity: 0;
+                visibility: hidden;
+            }
+            #heygen-streaming-embed.show {
+                opacity: 1;
+                visibility: visible;
+            }
+            #heygen-streaming-embed.expand {
+                ${clientWidth < 540 ? "height: 266px; width: 96%; left: 50%; transform: translateX(-50%);" : "height: 366px; width: calc(366px * 16 / 9);"}
+                border: 0;
+                border-radius: 8px;
+            }
+            #heygen-streaming-container {
+                width: 100%;
+                height: 100%;
+            }
+            #heygen-streaming-container iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+        `;
+        const iframe = document.createElement("iframe");
+        iframe.allowFullscreen = false;
+        iframe.title = "Streaming Embed";
+        iframe.role = "dialog";
+        iframe.allow = "microphone";
+        iframe.src = url;
+        let visible = false, initial = false;
+        window.addEventListener("message", (e) => {
+            if (e.origin === host && e.data && e.data.type === "streaming-embed") {
+                if (e.data.action === "init") {
+                    initial = true;
+                    wrapDiv.classList.toggle("show", initial);
+                } else if (e.data.action === "show") {
+                    visible = true;
+                    wrapDiv.classList.toggle("expand", visible);
+                } else if (e.data.action === "hide") {
+                    visible = false;
+                    wrapDiv.classList.toggle("expand", visible);
+                }
+            }
+        });
+        container.appendChild(iframe);
+        wrapDiv.appendChild(stylesheet);
+        wrapDiv.appendChild(container);
+        document.body.appendChild(wrapDiv);
+    }(globalThis);
+</script>
+</body>
 </html>
+
