@@ -34,10 +34,21 @@ export function useTheme() {
   // In development, attach keybind combinations to toggle theme
   useEffect(() => {
     if (!import.meta.env.DEV) return;
+    // function toggleOnKeybind(e) {
+    //   if (e.metaKey && e.key === ".") {
+    //     e.preventDefault();
+    //     setTheme((prev) => (prev === "light" ? "default" : "light"));
+    //   }
+    // }
     function toggleOnKeybind(e) {
       if (e.metaKey && e.key === ".") {
         e.preventDefault();
-        setTheme((prev) => (prev === "light" ? "default" : "light"));
+        setTheme((prev) => {
+          // Cycle through the themes
+          if (prev === "light") return "blueGradient";
+          if (prev === "blueGradient") return "default";
+          return "light";
+        });
       }
     }
     document.addEventListener("keydown", toggleOnKeybind);
