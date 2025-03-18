@@ -143,15 +143,15 @@
 }
 
 /* ✅ Ensure BODY uses blue gradient */
-body[data-theme="blueGradient"] {
+/* body[data-theme="blueGradient"] {
   background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-}
+} */
 
 /* ✅ Override any other background styles */
-html[data-theme="blueGradient"],
+/* html[data-theme="blueGradient"],
 #root[data-theme="blueGradient"] {
   background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-}
+} */
 
 /* ✅ Debug if text is invisible */
 [data-theme="blueGradient"] * {
