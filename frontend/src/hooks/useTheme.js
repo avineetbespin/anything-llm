@@ -21,12 +21,22 @@ export function useTheme() {
     if (!window.matchMedia) return;
     if (window.matchMedia("(prefers-color-scheme: light)").matches)
       return _setTheme("light");
+    
+    // logic for blue-gradient fallback or default
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return _setTheme("blueGradient");  // Fallback to blue-gradient in dark mode
+    }
+    
     _setTheme("default");
   }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     document.body.classList.toggle("light", theme === "light");
+    
+     // Handle blue-gradient theme styling (you may need to create specific styles for this theme)
+    document.body.classList.toggle("blue-gradient", theme === "blueGradient");
+    
     localStorage.setItem("theme", theme);
     window.dispatchEvent(new Event(REFETCH_LOGO_EVENT));
   }, [theme]);
