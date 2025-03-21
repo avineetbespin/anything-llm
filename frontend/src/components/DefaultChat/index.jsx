@@ -103,7 +103,7 @@ export default function DefaultChatContainer() {
                 className="mt-5 w-fit transition-all duration-300 border border-slate-200 px-4 py-2 rounded-lg text-white light:border-black/50 light:text-theme-text-primary text-sm items-center flex gap-x-2 hover:bg-slate-200 hover:text-slate-800 focus:ring-gray-800"
               >
                 <Plus className="h-4 w-4" />
-                <p>{t("welcomeMessage.createWorkspace")}</p>
+                <p className="text-white">{t("welcomeMessage.createWorkspace")}</p>
               </button>
             )}
           </div>
