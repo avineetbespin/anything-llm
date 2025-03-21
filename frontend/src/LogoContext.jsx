@@ -12,10 +12,13 @@ export function LogoProvider({ children }) {
   const [logo, setLogo] = useState("");
   const [loginLogo, setLoginLogo] = useState("");
   const [isCustomLogo, setIsCustomLogo] = useState(false);
-  const DefaultLoginLogo =
-    localStorage.getItem("theme") !== "default"
-      ? DefaultLoginLogoDark
-      : DefaultLoginLogoLight;
+  
+  const DefaultLoginLogo = (() => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") return DefaultLoginLogoLight;
+    // Use dark logo for both default dark and blue gradient themes
+    return DefaultLoginLogoDark;
+  })();
 
   async function fetchInstanceLogo() {
     try {
@@ -25,16 +28,24 @@ export function LogoProvider({ children }) {
         setLoginLogo(isCustomLogo ? logoURL : DefaultLoginLogo);
         setIsCustomLogo(isCustomLogo);
       } else {
-        localStorage.getItem("theme") !== "default"
-          ? setLogo(AnythingLLMDark)
-          : setLogo(AnythingLLM);
+        const theme = localStorage.getItem("theme");
+        if (theme === "light") {
+          setLogo(AnythingLLMDark);
+        } else {
+          // Use dark logo for both default dark and blue gradient themes
+          setLogo(AnythingLLM);
+        }
         setLoginLogo(DefaultLoginLogo);
         setIsCustomLogo(false);
       }
     } catch (err) {
-      localStorage.getItem("theme") !== "default"
-        ? setLogo(AnythingLLMDark)
-        : setLogo(AnythingLLM);
+      const theme = localStorage.getItem("theme");
+      if (theme === "light") {
+        setLogo(AnythingLLMDark);
+      } else {
+        // Use dark logo for both default dark and blue gradient themes
+        setLogo(AnythingLLM);
+      }
       setLoginLogo(DefaultLoginLogo);
       setIsCustomLogo(false);
       console.error("Failed to fetch logo:", err);

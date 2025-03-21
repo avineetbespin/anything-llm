@@ -13,6 +13,8 @@ import SimpleSSOPassthrough from "@/pages/Login/SSO/simple";
 import OnboardingFlow from "@/pages/OnboardingFlow";
 import i18n from "./i18n";
 
+import HeygenEmbed from "@/components/HeygenEmbed";
+
 import { PfpProvider } from "./PfpContext";
 import { LogoProvider } from "./LogoContext";
 import { FullScreenLoader } from "./components/Preloader";
@@ -247,6 +249,7 @@ export default function App() {
                   />
                 </Routes>
                 <ToastContainer />
+                <HeygenEmbed />
               </I18nextProvider>
             </PfpProvider>
           </LogoProvider>

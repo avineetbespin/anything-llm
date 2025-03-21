@@ -105,57 +105,139 @@
 
 [data-theme="blueGradient"] {
   --theme-loader: #ffffff;
-  --theme-bg-primary: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-  --theme-bg-secondary: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d) !important;
-  --theme-bg-sidebar: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-  --theme-bg-container: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-  --theme-bg-chat: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-  --theme-bg-chat-input: #27282a;
+  /* Base colors using the blue gradient */
+  --theme-bg-primary: #1e3c72;
+  --theme-bg-secondary: #1e3c72;
+  --theme-bg-sidebar: #1e3c72;
+  --theme-bg-container: #000000;
+  --theme-bg-chat: #2a5298;
+  --theme-bg-chat-input: #2a5298;
+  
+  /* Light text colors for better contrast against blue */
   --theme-text-primary: #ffffff;
   --theme-text-secondary: rgba(255, 255, 255, 0.8);
-  --theme-sidebar-item-default: rgba(255, 255, 255, 0.1);
-  --theme-sidebar-item-selected: rgba(255, 255, 255, 0.3);
-  --theme-sidebar-item-hover: #3f3f42;
-  --theme-sidebar-border: rgba(255, 255, 255, 0.1);
+  
+  /* Sidebar colors */
+  --theme-sidebar-item-text-active: #ffffff;
+  --theme-sidebar-item-text-inactive: rgba(255, 255, 255, 0.7);
   --theme-sidebar-item-workspace-active: #ffffff;
-  --theme-sidebar-item-workspace-inactive: #ffffff;
-  --theme-chat-input-border: #525355;
-  --theme-action-menu-bg: #27282a;
-  --theme-action-menu-item-hover: rgba(255, 255, 255, 0.1);
-  --theme-settings-input-bg: #0e0f0f;
+  --theme-sidebar-item-workspace-inactive: rgba(255, 255, 255, 0.7);
+  
+  /* Input and UI elements */
+  --theme-chat-input-border: rgba(255, 255, 255, 0.2);
+  --theme-action-menu-bg: rgba(42, 82, 152, 0.9);
+  --theme-action-menu-item-hover: rgba(30, 60, 114, 0.9);
+  --theme-settings-input-bg: rgba(42, 82, 152, 0.9);
   --theme-settings-input-placeholder: rgba(255, 255, 255, 0.5);
-  --theme-settings-input-active: rgb(255 255 255 / 0.2);
-  --theme-modal-border: #3f6cb2;
+  --theme-settings-input-active: rgba(30, 60, 114, 0.9);
   --theme-settings-input-text: #ffffff;
-  --theme-button-primary: #46c8ff;
-  --theme-button-primary-hover: #434343;
-  --theme-button-cta: #7cd4fd;
-  --theme-file-row-even: #1e3c72;
-  --theme-file-row-odd: #2a5298;
-  --theme-file-row-selected-even: rgba(14, 165, 233, 0.2);
-  --theme-file-row-selected-odd: rgba(14, 165, 233, 0.1);
-  --theme-file-picker-hover: rgb(14 165 233 / 0.2);
+  --theme-modal-border: rgba(255, 255, 255, 0.2);
+  
+  /* Buttons with matching blue theme */
+  --theme-button-primary: #4a90e2;
+  --theme-button-primary-hover: #357abd;
+  --theme-button-cta: #64b5f6;
+  
+  /* File rows */
+  --theme-file-row-even: rgba(30, 60, 114, 0.7);
+  --theme-file-row-odd: rgba(42, 82, 152, 0.7);
+  --theme-file-row-selected-even: rgba(74, 144, 226, 0.3);
+  --theme-file-row-selected-odd: rgba(74, 144, 226, 0.2);
+  --theme-file-picker-hover: rgba(74, 144, 226, 0.2);
 }
 
-/* ✅ Force Background Update */
-[data-theme="blueGradient"] {
-  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
+/* Gradient backgrounds */
+[data-theme="blueGradient"] .gradient-container,
+[data-theme="blueGradient"] #root,
+[data-theme="blueGradient"] .sidebar,
+[data-theme="blueGradient"] #chat-container {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
-/* ✅ Ensure BODY uses blue gradient */
-/* body[data-theme="blueGradient"] {
-  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-} */
+/* Text colors */
+[data-theme="blueGradient"] .text-white {
+  color: var(--theme-text-primary) !important;
+}
 
-/* ✅ Override any other background styles */
-/* html[data-theme="blueGradient"],
-#root[data-theme="blueGradient"] {
-  background: linear-gradient(135deg, #1e3c72, #2a5298) !important;
-} */
+/* Input styling */
+[data-theme="blueGradient"] input,
+[data-theme="blueGradient"] textarea,
+[data-theme="blueGradient"] select {
+  background-color: rgba(42, 82, 152, 0.8);
+  color: #ffffff;
+}
 
-/* ✅ Debug if text is invisible */
-[data-theme="blueGradient"] * {
-  color: white !important;
+[data-theme="blueGradient"] input::placeholder,
+[data-theme="blueGradient"] textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Button styling */
+[data-theme="blueGradient"] .btn-primary {
+  background-color: var(--theme-button-primary);
+  color: var(--theme-bg-primary) !important;
+  transition: background-color 0.2s ease;
+}
+
+[data-theme="blueGradient"] .btn-primary:hover {
+  background-color: var(--theme-button-primary-hover);
+  color: var(--theme-text-primary) !important;
+}
+
+/* Make sure paragraphs inside buttons match the color */
+[data-theme="blueGradient"] button p,
+[data-theme="blueGradient"] .btn p,
+[data-theme="blueGradient"] .btn-primary p {
+  color: var(--theme-bg-primary) !important;
+}
+
+/* Change paragraph color on hover */
+[data-theme="blueGradient"] button:hover p,
+[data-theme="blueGradient"] .btn:hover p,
+[data-theme="blueGradient"] .btn-primary:hover p {
+  color: var(--theme-text-primary) !important;
+}
+
+/* Specific override for CTA buttons */
+[data-theme="blueGradient"] button.bg-primary-button {
+  color: var(--theme-bg-primary) !important;
+}
+
+[data-theme="blueGradient"] button.bg-primary-button:hover {
+  color: rgba(42, 82, 152, 0.8) !important;
+}
+
+/* Menu items */
+[data-theme="blueGradient"] .menu-item {
+  background-color: rgba(42, 82, 152, 0.8);
+  transition: background-color 0.2s ease;
+}
+
+[data-theme="blueGradient"] .menu-item:hover {
+  background-color: rgba(30, 60, 114, 0.8);
+}
+
+/* Scrollbar styling */
+[data-theme="blueGradient"] .show-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+[data-theme="blueGradient"] .show-scrollbar::-webkit-scrollbar-track {
+  background: rgba(30, 60, 114, 0.3);
+}
+
+[data-theme="blueGradient"] .show-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(74, 144, 226, 0.5);
+  border-radius: 4px;
+}
+
+[data-theme="blueGradient"] .show-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(74, 144, 226, 0.7);
+}
+
+[data-theme="blueGradient"] .text-description,
+[data-theme="blueGradient"] .text-white\/60 {
+  color: var(--theme-text-secondary);
 }
 
 [data-theme="light"] .text-white {
